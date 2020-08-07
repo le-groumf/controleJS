@@ -1,0 +1,51 @@
+<!-- Rappel controles natif JS  -->
+
+<html>
+
+<p>Test la condition JS 0 pour int passant ou pas</p>
+<p>Test la condition JS '' pour string passant ou pas</p>
+
+<div>Int : <input id="inputInt"></div>
+<div>String <input id="inputString"></div>
+
+<input type="button" value="testValues" onclick="testValues()">
+
+<div id="int"></div>
+<div id="string"></div>
+
+<script>
+  var obj = {
+    string: '',
+    int: 0
+  };
+
+  stringElt = document.getElementById('string');
+  intElt = document.getElementById('int');
+  inputStringElt = document.getElementById('inputString');
+  inputIntElt = document.getElementById('inputInt');
+
+  inputIntElt.addEventListener('change', (e) => {
+    obj.int = parseInt(inputIntElt.value);
+  });
+
+  inputStringElt.addEventListener('change', (e) => {
+    obj.string = inputStringElt.value;
+  });
+
+
+  function testValues() {
+    if (obj && obj.int) {
+      intElt.innerHTML = 'test OK int';
+    } else {
+      intElt.innerHTML = 'test KO int';
+    }
+
+    if (obj && obj.string) {
+      stringElt.innerHTML = 'test OK string';
+    } else {
+      stringElt.innerHTML = 'test KO string';
+    }
+  }
+</script>
+
+</html>
